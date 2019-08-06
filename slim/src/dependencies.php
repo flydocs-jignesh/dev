@@ -10,13 +10,22 @@ $container['db'] = function($c)  use($capsule) {
     return $capsule;
 };
 
-$container['oauth'] = function($c){
-	$db = $c['settings']['odb'];
-	OAuth2\Autoloader::register();
-	$storage = new OAuth2\Storage\Pdo(array('dsn' => "mysql:dbname=".$db['dbname'].";host=".$db['host'], 'username' => $db['user'], 'password' => $db['pass']));
-	return $storage;
+// Jwt Middleware
+$container['jwt'] = function ($c) {
+    $jws_settings = $c->get('settings')['jwt'];
+    return new \Slim\Middleware\JwtAuthentication($jws_settings);
+};
+
+// Optional Auth Middleware
+$container['optionalAuth'] = function ($c) {
+  return new App\Middleware\OptionalAuth($c);
 };
 
 $container['Login'] = function ($c) {
-    return new App\Controllers\User\Login($c);
+    return new App\Controllers\Users\Login($c);
 };
+$container['AircraftController'] = function ($c) {
+    return new App\Controllers\Components\AircraftController($c);
+};
+
+

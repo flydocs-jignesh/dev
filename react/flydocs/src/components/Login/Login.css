@@ -1,0 +1,331 @@
+
+/**CSS for Login Header*/
+.topheaderclass {
+    background:#fff;
+    height:97px;
+    width:100%;
+    border-bottom:8px solid #fdc805;
+}
+
+.logoclass {
+    float:left;
+    width:50%;
+    height:65px;
+    margin-top:5px;
+    margin-left:8px;
+    background: url(../../images/flydocslogo.png) no-repeat;
+    
+}
+
+.powerby {
+    color:#004e26;
+    font-size:15px;
+    padding:10px 10px 10px 10px;
+    font-weight:bold;
+    float:right;
+    font-family: Tahoma;
+}
+
+/**Login Header Over*/
+
+/**Login Page Body Start**/
+.tableMainBackground {
+    background-color: #004e26;
+    height: 850px;;
+}
+.whitebackground {
+    background:#FFFFFF;
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 30%;
+    height: 35%;
+    
+}
+.WelcomescreenHeadingpurple {
+    color:#004e26;
+    font-size:25px;
+    text-decoration:none;
+    height:45px;
+    font-family: Tahoma;
+}
+.tableMiddleBackground_roundedcorner {
+       
+    border:1px solid #c9c9c9;
+    -moz-radius-border:5px;
+    -webkit-radius-border:5px;
+    border-radius:5px;
+    padding:10px;
+    width: 35%;
+    margin-left: 20%;
+    margin-top: 5%;
+
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #000000;
+}
+.textInput {
+    font-family:Tahoma;
+    font-size:11px;
+    width:142px;
+    height:22px;
+}
+.button {
+    height: 31px;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-family:Tahoma;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align: center;
+    padding:5px 15px;
+    *padding:5px 5px;
+    background: #004e26;
+    background: -moz-linear-gradient(top, #004e26, #004e26 50%, #004e26 51%, #004e26);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #004e26), color-stop(.5, #004e26), color-stop(.5, #004e26), to(#004e26));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border:0;
+    cursor:pointer;
+    margin:2px;
+    margin-bottom:0px;
+}
+/**Login Page body over**/
+/*
+input::-moz-focus-inner {
+    border: 0px;
+    }
+    body, html {
+        margin:0px;
+        padding:0px;
+        height:100%;
+        overflow:hidden;
+    
+    }
+    a:link {
+        text-decoration:none;
+        color:#000;
+    }
+    a:visited {
+        text-decoration:none;
+        color:#000;
+    }
+    a:active {
+        text-decoration:none;
+        outline: none;
+        color:#000;
+    }
+    a:hover {
+        text-decoration:none;
+        color:#979797;
+    }
+    td {
+        font-family:Tahoma;
+        font-size:11px;
+        color:#000000;
+    }
+    .restrict_header {
+      color:#FFFFFF;
+      font-size:18px;
+      font-weight:bold;
+    }
+    .tableMainBackground {
+        background-color: #004e26;
+    }
+    .whitebackground {
+        background:#FFFFFF;
+    }
+    .WelcomescreenHeadingpurple {
+        color:#004e26;
+        font-size:25px;
+        text-decoration:none;
+        height:45px;
+    }
+    #welcome_box {
+      background-color:#7C7B7C;
+      background-position:50% 0;
+      background-repeat:repeat no-repeat;
+      border:1px solid #C9C9C9;
+      border-bottom-left-radius:5px;
+      border-bottom-right-radius:5px;
+      border-top-left-radius:5px;
+      border-top-right-radius:5px;
+      height:143px;
+      padding:10px;
+    }
+    .tableMiddleBackground_roundedcorner {
+       
+        border:1px solid #c9c9c9;
+        -moz-radius-border:5px;
+        -webkit-radius-border:5px;
+        border-radius:5px;
+        padding:10px;
+    }
+    .messageFont {
+        color:#F00;
+    }
+    .messageFont_roaming {
+        color:#F00;
+        font-family:Tahoma;
+        font-size:16px;
+        text-decoration:none;
+    }
+    .textInput {
+        font-family:Tahoma;
+        font-size:11px;
+        width:142px;
+        height:22px;
+    }
+    .button {
+        height: 31px;
+        color: white;
+        text-decoration: none;
+        font-size: 11px;
+        font-family:Tahoma;
+        font-weight:bold;
+        text-transform:uppercase;
+        text-align: center;
+        padding:5px 15px;
+        *padding:5px 5px;
+        background: #004e26;
+        background: -moz-linear-gradient(top, #004e26, #004e26 50%, #004e26 51%, #004e26);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #004e26), color-stop(.5, #004e26), color-stop(.5, #004e26), to(#004e26));
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border:0;
+        cursor:pointer;
+        margin:2px;
+        margin-bottom:0px;
+    }
+    .button:hover {
+        padding:5px 15px;
+            *padding:5px 5px;
+        background: #fdc805;
+        background: -moz-linear-gradient(top, #fdc805, #fdc805 50%, #fdc805 51%, #fdc805);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fdc805), color-stop(.5, #fdc805), color-stop(.5, #fdc805), to(#fdc805));
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border:0;
+        cursor:pointer;
+        color:#000;
+    }
+    .button:visited {
+        background: -moz-linear-gradient(top, #004e26, #004e26 50%, #004e26 51%, #004e26);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #004e26), color-stop(.5, #004e26), color-stop(.5, #004e26), to(#004e26));
+    }
+    .disbutton {
+        background: #f0f0f0;
+        border:#f00 1px solid;
+        height: 31px;
+        color:#a0a0a0;
+        text-decoration: none;
+        font-weight:bold;
+        text-transform:uppercase;
+        text-align: center;
+        padding:5px 15px;
+       *padding:5px 5px;
+        background: -moz-linear-gradient(top, #f0f0f0, #f0f0f0 50%, #f0f0f0 51%, #f0f0f0);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0f0f0), color-stop(.5, #f0f0f0), color-stop(.5, #f0f0f0), to(#f0f0f0));
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border:0px;
+        cursor:pointer;
+        height:31px;
+        margin:2px;
+        margin-bottom:0px;
+        
+    }
+    .disbutton:hover {
+        padding:0px 15px;
+        *padding:5px 5px;
+        background: #f0f0f0;
+        background: -moz-linear-gradient(top, #f0f0f0, #f0f0f0 50%, #f0f0f0 51%, #f0f0f0);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f0f0f0), color-stop(.5, #f0f0f0), color-stop(.5, #f0f0f0), to(#f0f0f0));
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border:0px;
+        cursor:pointer;
+    }
+    .topheaderclass {
+        background:#fff;
+    	height:97px;
+        width:100%;
+        border-bottom:8px solid #fdc805;
+    }
+    .logoheading
+    {	vertical-align:top;
+        height:20px;
+    }
+    .logoclass {
+        float:left;
+        width:50%;
+        height:71px;
+        margin-top:5px;
+        margin-left:8px;
+    }
+    
+    .powerclass {
+        float:right;
+    }
+    .powerby {
+        color:#004e26;
+        font-size:15px;
+        padding:10px 10px 10px 10px;
+        font-weight:bold;
+    }
+    .white_smf {
+        font-family:Tahoma;
+        font-size:16px;
+        color:#FFF;
+        text-decoration:none;
+    }
+    .smallblueTxt {
+        color:#004e26;
+    }
+    .smallblueTxt_dis {
+        color:#CCC;
+    }
+    .cred
+    {
+        color:#F00;
+    }
+    .cyellow
+    {
+        color:#C90;
+    }
+    
+    .cblue
+    {
+        color:#00F;
+    }
+    .cgreen
+    {
+        color:#063;
+    }
+    .cont_btn{
+        height: 31px;
+        color:#004e26;
+        text-decoration: none;
+        font-size: 11px;
+        font-family: Tahoma;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5px 15px;
+        margin:20px 0;
+        border:0;
+        background: #fdc805;
+        cursor:pointer;
+        background: -moz-linear-gradient(top, #fdc805, #fdc805 50%, #fdc805 51%, #fdc805);
+       }
+       .cont_btn:hover{
+        color: 004e26;
+        background: #ffffff;
+       }
+
+       */

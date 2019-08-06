@@ -2,39 +2,31 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-$mw = function ($request, $response, $next){
-	$server = new OAuth2\Server($this->oauth);
-	// Add the "Client Credentials" grant type (it is the simplest of the grant types)
-	$server->addGrantType(new OAuth2\GrantType\ClientCredentials($this->oauth));
-	// Add the "Authorization Code" grant type (this is where the oauth magic happens)
-	$server->addGrantType(new OAuth2\GrantType\AuthorizationCode($this->oauth));
-	// Handle a request to a resource and authenticate the access token
-	if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
-		$server->getResponse()->send();
-		die;
-	}
-	$response = $next($request, $response);
-	return $response;
-};
-
-$app->post('/generateToken',function(Request $request, Response $response){
-
-    // @ generate a fresh token
-    // @ Token is valid till 1 hr or 3600 seconds after which it expires
-    // @ Token will not be auto refreshed
-    // @ generation of a new token should be handled at application level by calling this api
-
-    // @ add parameter : ,['access_lifetime'=>3600] if you want to extent token life time from default 3600 seconds
-    //print_r($this->oauth);
-    $server = new OAuth2\Server($this->oauth);
-    $server->addGrantType(new OAuth2\GrantType\ClientCredentials($this->oauth));
-    $server->addGrantType(new OAuth2\GrantType\AuthorizationCode($this->oauth));
-
-    // @ generate a Oauth 2.0 token in json with format below
-    // @ {"access_token":"ac7aeb0ee432bf9b73f78985c66a1ad878593530","expires_in":3600,"token_type":"Bearer","scope":null}
-    $server->handleTokenRequest(OAuth2\Request::createFromGlobals())->send();
-
+$app->add(function (Request $request, Response $response, callable $next) {
+    $uri = $request->getUri();
+    $path = $uri->getPath();
+    if ($path != '/' && substr($path, -1) == '/') {
+        // permanently redirect paths with a trailing slash
+        // to their non-trailing counterpart
+        $uri = $uri->withPath(substr($path, 0, -1));
+        if($request->getMethod() == 'GET') {
+            return $response->withRedirect((string)$uri, 301);
+        }
+        else {
+            return $next($request->withUri($uri), $response);
+        }
+    }
+    return $next($request, $response);
 });
 
+$app->group('/api',
+    function () {
 
-$app->get('/', 'Login:index')->add($mw);
+        $jwtMiddleware = $this->getContainer()->get('jwt');
+        $optionalAuth = $this->getContainer()->get('optionalAuth');
+        /** @var \Slim\App $this */
+
+        $this->get('/', 'Login:index');
+        $this->post('/login/varifyUser','Login:varifyUser');
+        $this->post('/components','AircraftController:index')->add($jwtMiddleware);
+});

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FLYdocs - Advanced Aviation Systems</title>
+</head>
+<body>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <div class="topheaderclass">
+            <div class="logoclass" style="height:65px;"  ondblclick="getServerInfo();"></div>
+            <div class="powerby"  style="float:right">powered by FLYdocs</div>
+        </div>
+        </td>
+    </tr>
+    <tr>
+        <td height="100%" class="tableMainBackground" align="center" valign="middle" id="PageContent">
+            <table width="35%" border="0" cellspacing="0" cellpadding="0" class="whitebackground" style="padding:0 15px;">
+                <tr>
+                    <td align="center" valign="top">
+                        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                            	<td align="left" class="WelcomescreenHeadingpurple">Welcome To FLYdocs</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tableMiddleBackground_roundedcorner">
+	                                <form name="login" action="/index.php" method="post" onSubmit="return SubmitForm()">
+                                        <table width="100%" height="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+                                            <tr>
+                                                <td  height="25" colspan="2" align="center" class="messageFont">
+                                                    <input type="hidden" name="act" value="Submit">
+                                                    <input type="hidden" name="getArg" value="">
+                                                    <input type="hidden" name="DB" value="">
+                                                    <input type="hidden" name="token" id="token" value="">
+                                                    <input type="hidden" name="timeStr" id="timeStr" value="" />
+                                                    <span class="messageFont" id="remainTime"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="36%" height="25" align="right"><b>Username:</b></td>
+                                                <td width="64%" align="left"><input id="username" name="username" type="text" size="20"  class="textInput" style="width:200px;" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="25" align="right"><b>Password:</b></td>
+                                                <td align="left"><input id="password" name="password" type="password" size="20"  class="textInput" style="width:200px;" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">&nbsp;</td>
+                                                <td align="left"><input  type="submit"   value="SUBMIT"  class="button"  id="Submit"    name="Submit" /><input  type="button"   value="RESET"  class="button"  id="resetLogin" onclick="Reset();" /></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </td>
+                            </tr>
+                        <tr>
+                        <td align="center"><table border="0" cellspacing="0" cellpadding="3">
+                        <tr>
+                        <td height="40" align="right" valign="middle"><img src="https://www.flydocstest.com/images/login_arrow.png" /></td>
+                        <td align="center" valign="middle">Forgotten your password? <a id="forgotPassword"  href="forgot_password.php"><span class="smallblueTxt"><strong>Click Here</strong></span></a></td>
+                        </tr>
+                        </table></td>
+                        </tr>              
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

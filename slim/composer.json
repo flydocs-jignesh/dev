@@ -2,7 +2,7 @@
     "require": {
         "slim/slim": "^3.12",
 		"illuminate/database": "^5.2",
-		"bshaffer/oauth2-server-php": "^1.10"
+        "tuupola/slim-jwt-auth": "^2.3"
     },
     "autoload-dev": {
         "psr-4": {

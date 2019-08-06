@@ -10,4 +10,8 @@ class User extends Model {
     protected $fillable = [
         'name', 'email', 'password', 'api_key'
     ];
+    protected $guarded = ['id', 'password'];
+    protected $hidden = [
+        'password',
+    ];
 }

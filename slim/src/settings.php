@@ -22,5 +22,21 @@ return [
             'user' => 'root',
 			'pass' => ''
         ],
+        'cors' => null !== getenv('CORS_ALLOWED_ORIGINS') ? getenv('CORS_ALLOWED_ORIGINS') : '*',
+
+        // jwt settings
+        'jwt'  => [
+            'path'   => '/api',
+            'secret' => "FLYdocsHeckThon",
+            'secure' => false,
+            "header" => "Authorization",
+            "regexp" => "/Token\s+(.*)$/i",
+            'passthrough' => ['OPTIONS']
+        ],
+        // App Settings
+        'app'   => [
+            'name' => "FLYdocs",
+            'url'  => "http:/192.168.100.15"
+        ],
     ],
 ];

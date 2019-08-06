@@ -18,11 +18,13 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
+            'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
         ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
@@ -36,6 +38,7 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
         ),
         'F' => 
         array (
+            'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
         ),
         'D' => 
@@ -65,6 +68,10 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
+        'Slim\\Middleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
+        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
@@ -72,6 +79,10 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -101,6 +112,10 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
@@ -125,13 +140,6 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
-            ),
-        ),
-        'O' => 
-        array (
-            'OAuth2' => 
-            array (
-                0 => __DIR__ . '/..' . '/bshaffer/oauth2-server-php/src',
             ),
         ),
     );
