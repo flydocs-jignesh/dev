@@ -28,5 +28,11 @@ $app->group('/api',
 
         $this->get('/', 'Login:index');
         $this->post('/login/varifyUser','Login:varifyUser');
-        $this->post('/components','AircraftController:index')->add($jwtMiddleware);
+
+        $this->get('/fleet','AircraftController:getAircaftList');
+        $this->get('/fleet/[{id}]','AircraftController:getAircaft');
+
+        $this->get('/MCC','MCCController:getWorkPackList');
+        $this->get('/MCC/[{id}]','MCCController:getWorkPack');
+        $this->post('/MCC','MCCController:CreateWorkPack');
 });

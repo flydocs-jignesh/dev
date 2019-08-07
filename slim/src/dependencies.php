@@ -24,8 +24,12 @@ $container['optionalAuth'] = function ($c) {
 $container['Login'] = function ($c) {
     return new App\Controllers\Users\Login($c);
 };
+
 $container['AircraftController'] = function ($c) {
-    return new App\Controllers\Components\AircraftController($c);
+    return new App\Controllers\fleet\AircraftController($c);
 };
 
+$container['MCCController'] = function ($c) {
+    return new App\Controllers\MCC\MCCController($c);
+};
 
