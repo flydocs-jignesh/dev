@@ -10,17 +10,6 @@ $container['db'] = function($c)  use($capsule) {
     return $capsule;
 };
 
-// Jwt Middleware
-$container['jwt'] = function ($c) {
-    $jws_settings = $c->get('settings')['jwt'];
-    return new \Slim\Middleware\JwtAuthentication($jws_settings);
-};
-
-// Optional Auth Middleware
-$container['optionalAuth'] = function ($c) {
-  return new App\Middleware\OptionalAuth($c);
-};
-
 $container['Login'] = function ($c) {
     return new App\Controllers\Users\Login($c);
 };
@@ -32,4 +21,18 @@ $container['AircraftController'] = function ($c) {
 $container['MCCController'] = function ($c) {
     return new App\Controllers\MCC\MCCController($c);
 };
+
+$container['FileController'] = function ($c) {
+    return new App\Controllers\Files\FileController($c);
+};
+
+$container['ELK'] = function ($c) {
+    $elk_settings = $c->get('settings')['ELK'];   
+    $ELK = Elasticsearch\ClientBuilder::create()
+                    ->setHosts($elk_settings)
+                    ->build();
+    return $ELK;
+};
+
+$container['upload_directory'] = __DIR__ . '/uploads';
 

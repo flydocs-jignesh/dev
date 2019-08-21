@@ -6,7 +6,7 @@ class AircraftController  {
 
     public function index($request, $response, $args) {
         try
-        {       
+        {    
             $data = $request->getParsedBody();
             $page  = $data['page'] ? $data['page'] : 1;
             $limit = $data['limit'] ? $data['limit'] : 10;

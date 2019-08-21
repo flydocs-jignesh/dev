@@ -9,6 +9,7 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
     );
 
@@ -18,8 +19,11 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
-            'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
+        ),
+        'R' => 
+        array (
+            'React\\Promise\\' => 14,
         ),
         'P' => 
         array (
@@ -36,10 +40,18 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Stream\\' => 18,
+            'GuzzleHttp\\Ring\\' => 16,
+        ),
         'F' => 
         array (
-            'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
+        ),
+        'E' => 
+        array (
+            'Elasticsearch\\' => 14,
         ),
         'D' => 
         array (
@@ -68,13 +80,13 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
-        'Slim\\Middleware\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
-        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'React\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/promise/src',
         ),
         'Psr\\SimpleCache\\' => 
         array (
@@ -112,13 +124,21 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
-        'Firebase\\JWT\\' => 
+        'GuzzleHttp\\Stream\\' => 
         array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+            0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
+        ),
+        'GuzzleHttp\\Ring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/ringphp/src',
         ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'Elasticsearch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/Elasticsearch',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
@@ -140,6 +160,13 @@ class ComposerStaticInit20ae40b3eed2b5136dd0d4c16d84cb65
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
+        'O' => 
+        array (
+            'OAuth2' => 
+            array (
+                0 => __DIR__ . '/..' . '/bshaffer/oauth2-server-php/src',
             ),
         ),
     );

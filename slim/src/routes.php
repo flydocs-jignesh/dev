@@ -2,6 +2,7 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+
 $app->add(function (Request $request, Response $response, callable $next) {
     $uri = $request->getUri();
     $path = $uri->getPath();
@@ -18,12 +19,10 @@ $app->add(function (Request $request, Response $response, callable $next) {
     }
     return $next($request, $response);
 });
-
+//$app->get('/login', 'Login:varifyUser');
 $app->group('/api',
     function () {
 
-        $jwtMiddleware = $this->getContainer()->get('jwt');
-        $optionalAuth = $this->getContainer()->get('optionalAuth');
         /** @var \Slim\App $this */
 
         $this->get('/', 'Login:index');
@@ -35,4 +34,6 @@ $app->group('/api',
         $this->get('/MCC','MCCController:getWorkPackList');
         $this->get('/MCC/[{id}]','MCCController:getWorkPack');
         $this->post('/MCC','MCCController:CreateWorkPack');
+
+        $this->post('/uploadFiles','FileController:uploadFiles');
 });

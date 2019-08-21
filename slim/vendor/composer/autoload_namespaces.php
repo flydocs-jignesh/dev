@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'OAuth2' => array($vendorDir . '/bshaffer/oauth2-server-php/src'),
 );
