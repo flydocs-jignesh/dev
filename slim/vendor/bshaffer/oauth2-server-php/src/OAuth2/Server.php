@@ -314,10 +314,10 @@ class Server implements ResourceControllerInterface,
      *
      * @ingroup oauth2_section_4
      */
-    public function handleTokenRequest(RequestInterface $request, ResponseInterface $response = null)
+    public function handleTokenRequest(RequestInterface $request, ResponseInterface $response = null, $UserId = NULL)
     {
         $this->response = is_null($response) ? new Response() : $response;
-        $this->getTokenController()->handleTokenRequest($request, $this->response);
+        $this->getTokenController()->handleTokenRequest($request, $this->response, $UserId );
 
         return $this->response;
     }

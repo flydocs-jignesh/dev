@@ -19,7 +19,7 @@ $app->add(function (Request $request, Response $response, callable $next) {
     }
     return $next($request, $response);
 });
-//$app->get('/login', 'Login:varifyUser');
+$app->post('/login', 'Login:varifyUser');
 $app->group('/api',
     function () {
 

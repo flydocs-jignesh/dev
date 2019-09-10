@@ -16,14 +16,40 @@ class Login  {
         $this->appConfig = $appConfig;
     }
     public function varifyUser($request, $response, $args) {
+		
 		$db = $this->appConfig['settings']['odb'];
-		print_r($db);exit;
+		//print_r($db);exit;
 		OAuth2\Autoloader::register();
 		$storage = new OAuth2\Storage\Pdo(array('dsn' => "mysql:dbname=".$db['dbname'].";host=".$db['host'], 'username' => $db['user'], 'password' => $db['pass']));
-        	$server = new OAuth2\Server($storage);
+        $server = new OAuth2\Server($storage);
+		
+		if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
+			$server->getResponse()->send();
+			die;
+		}
+		else{
+			$token = $server->getAccessTokenData(OAuth2\Request::createFromGlobals());
+			echo "sucess=".$token['user_id']."Exp=".date("Y-m-d H:i:s",$token['expires']);
+		}
+		exit;
+		$db = $this->appConfig['settings']['odb'];
+		//print_r($db);exit;
+		OAuth2\Autoloader::register();
+		$storage = new OAuth2\Storage\Pdo(array('dsn' => "mysql:dbname=".$db['dbname'].";host=".$db['host'], 'username' => $db['user'], 'password' => $db['pass']));
+        $server = new OAuth2\Server($storage);
 		$server->addGrantType(new OAuth2\GrantType\ClientCredentials($storage));
 		$server->addGrantType(new OAuth2\GrantType\AuthorizationCode($storage));
-		$server->handleTokenRequest(OAuth2\Request::createFromGlobals())->send();
+		$tObj = $server->handleTokenRequest(OAuth2\Request::createFromGlobals(),NULL,1234);
+		
+		//$serverRequest = OAuth2\Request::createFromGlobals();
+        //$serverResponse = new OAuth2\Response();
+		//$server->handleAuthorizeRequest($serverRequest, $tObj, true, 1234);
+		
+		$tObj->send();
+		
+		//$server->handleAuthorizeRequest(NULL, NULL, true, 1234);
+		//$server->handleAuthorizeRequest(OAuth2\Request, OAuth2\Responce, true, 2);
+        //echo $response->getHttpHeader('Location');
     }
     public function varifyUser_old($request, $response, $args)
     {

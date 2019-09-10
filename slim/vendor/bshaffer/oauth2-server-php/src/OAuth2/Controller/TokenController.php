@@ -82,9 +82,9 @@ class TokenController implements TokenControllerInterface
      * @param RequestInterface  $request  - Request object to grant access token
      * @param ResponseInterface $response - Response object
      */
-    public function handleTokenRequest(RequestInterface $request, ResponseInterface $response)
+    public function handleTokenRequest(RequestInterface $request, ResponseInterface $response , $UserId = NULL)
     {
-        if ($token = $this->grantAccessToken($request, $response)) {
+        if ($token = $this->grantAccessToken($request, $response, $UserId)) {
             // @see http://tools.ietf.org/html/rfc6749#section-5.1
             // server MUST disable caching in headers when tokens are involved
             $response->setStatusCode(200);
@@ -116,7 +116,7 @@ class TokenController implements TokenControllerInterface
      *
      * @ingroup oauth2_section_4
      */
-    public function grantAccessToken(RequestInterface $request, ResponseInterface $response)
+    public function grantAccessToken(RequestInterface $request, ResponseInterface $response ,  $UserId = NULL)
     {
         if (strtolower($request->server('REQUEST_METHOD')) === 'options') {
             $response->addHttpHeaders(array('Allow' => 'POST, OPTIONS'));
@@ -248,7 +248,7 @@ class TokenController implements TokenControllerInterface
             $requestedScope = $defaultScope;
         }
 
-        return $grantType->createAccessToken($this->accessToken, $clientId, $grantType->getUserId(), $requestedScope);
+        return $grantType->createAccessToken($this->accessToken, $clientId, $UserId, $requestedScope);
     }
 
     /**
