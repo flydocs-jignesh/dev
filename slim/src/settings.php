@@ -7,20 +7,20 @@ return [
 		// DB settings
 		'db' => [
             'driver' => 'mysql',
-            'host' => '192.168.100.54',
-            'database' => 'final_26',
-            'username' => 'development',
-            'password' => 'Admin@123',
+            'host' => '192.168.100.5',
+            'database' => 'flymcc',
+            'username' => 'admin',
+            'password' => 'admin',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
         ],		
 		// ODB settings
         'odb' => [
-            'host' => 'localhost',
+            'host' => '192.168.100.5',
             'dbname' => 'oauth',
-            'user' => 'root',
-			'pass' => ''
+            'user' => 'admin',
+			'pass' => 'admin'
         ],
         'cors' => null !== getenv('CORS_ALLOWED_ORIGINS') ? getenv('CORS_ALLOWED_ORIGINS') : '*',
 
