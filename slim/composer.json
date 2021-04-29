@@ -1,7 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.12",
-	"illuminate/database": "^5.2",
+	"illuminate/database": "^6.20",
         "elasticsearch/elasticsearch": "^7.0",
 	"bshaffer/oauth2-server-php": "^1.10"
     },
